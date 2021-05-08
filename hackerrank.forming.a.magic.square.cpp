@@ -28,12 +28,37 @@ int formingMagicSquare(vector<vector<int>> s) {
 		{3, 5, 7},
 		{8, 1, 6}
 	};
+	vector<vector<int>> magic_sqr_5 = {
+		{4, 3, 8},
+		{9, 5, 1},
+		{2, 7, 6}
+	};
+	vector<vector<int>> magic_sqr_6 = {
+		{6, 7 ,2},
+		{1, 5, 9},
+		{8, 3, 4}
+	};
+	vector<vector<int>> magic_sqr_7 = {
+		{8, 1, 6},
+		{3, 5, 7},
+		{4, 9, 2}
+	};
+	vector<vector<int>> magic_sqr_8 = {
+		{2, 9, 4},
+		{7, 5, 3},
+		{6, 1, 8},
+	};
 
 	vector<int> diffs = {
 		mat_diff(s, magic_sqr_1),
 		mat_diff(s, magic_sqr_2),
 		mat_diff(s, magic_sqr_3),
-		mat_diff(s, magic_sqr_4)};
+		mat_diff(s, magic_sqr_4),
+		mat_diff(s, magic_sqr_5),
+		mat_diff(s, magic_sqr_6),
+		mat_diff(s, magic_sqr_7),
+		mat_diff(s, magic_sqr_8)
+	};
 
-	return diffs[distance(diffs.begin(), std::min_element(diffs.begin(), diffs.end());
+	return diffs[distance(diffs.begin(), min_element(diffs.begin(), diffs.end()))];
 }
